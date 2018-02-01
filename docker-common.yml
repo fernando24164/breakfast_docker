@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    go-rest-api:
+        restart: always
+        build:
+            context: /vagrant/go_app
+            dockerfile: Dockerfile
+        volumes:
+        - .:/rest_app
+    nginx:
+        restart: always
+        image: nginx:1.11.6-alpine
