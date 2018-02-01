@@ -22,7 +22,7 @@ sudo usermod -aG docker vagrant
 cd /tmp
 wget https://dl.google.com/go/go1.9.2.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.profile
+echo "export PATH=$PATH:/usr/local/go/bin" >> /home/vagrant/.profile
 source ~/.profile
 
 docker pull ubuntu:14.04
