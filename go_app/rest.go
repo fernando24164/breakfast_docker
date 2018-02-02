@@ -7,25 +7,27 @@ import (
 	"net/http"
 )
 
-type Articule struct {
+type Article struct {
 	Name        string `json:Name`
 	Description string `json:Desc`
 	Number      int    `json:Number`
 }
 
-type Articules []Articule
+type Articles []Article
 
-func returnAllArticules(w http.ResponseWriter, r *http.Request) {
-	articules := Articules{
-		Articule{Name: "Test", Description: "bgfbgfbgf", Number: 2},
-		Articule{Name: "Test2", Description: "blalvFSD", Number: 3},
+func returnAllArticles(w http.ResponseWriter, r *http.Request) {
+	articles := Articles{
+		Article{Name: "Test1", Description: "Test description", Number: 5},
+		Article{Name: "Test2", Description: "Test description", Number: 3},
+		Article{Name: "Test3", Description: "Test description", Number: 7},
+		Article{Name: "Test4", Description: "Test description", Number: 9},
 	}
-	fmt.Println("Endpoint Articules!")
-	json.NewEncoder(w).Encode(articules)
+	fmt.Println("Endpoint Articles!")
+	json.NewEncoder(w).Encode(articles)
 }
 
 func handleRequests() {
-	http.HandleFunc("/articules", returnAllArticules)
+	http.HandleFunc("/articles", returnAllArticles)
 	log.Fatal(http.ListenAndServe(":8081", nil))
 }
 
