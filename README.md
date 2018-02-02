@@ -24,5 +24,5 @@ docker-compose up
 You will see the logs of the two containers to stop the process Ctrl+C. You maybe want to clean your memory so you can remove your containers.
 
 ```shell
-docker ps rm $(docker ps -aq)
+docker rm $(docker ps -aq)
 ```
