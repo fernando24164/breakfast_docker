@@ -1,5 +1,5 @@
 FROM golang:1.9.3
-MAINTAINER A3SEC
+LABEL maintainer="fernando24164"
 
 RUN mkdir /rest_app
 
